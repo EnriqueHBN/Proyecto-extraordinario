@@ -1,0 +1,50 @@
+com.example.animalsapp-jetified-ui-text-release-0 C:\Users\kicay\.gradle\caches\transforms-4\03a582626e01d91346e79fe66ba1b6b9\transformed\jetified-ui-text-release\res
+com.example.animalsapp-jetified-lifecycle-runtime-ktx-2.7.0-1 C:\Users\kicay\.gradle\caches\transforms-4\0f539224b88131c5fce8aa3e6524598f\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.example.animalsapp-jetified-lifecycle-viewmodel-savedstate-2.7.0-2 C:\Users\kicay\.gradle\caches\transforms-4\166e4ab10e24a0fd63f76b262977f6db\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.animalsapp-jetified-savedstate-ktx-1.2.1-3 C:\Users\kicay\.gradle\caches\transforms-4\1bba256b63b162c7382785fd03e80442\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.animalsapp-lifecycle-viewmodel-2.7.0-4 C:\Users\kicay\.gradle\caches\transforms-4\1c93cb5bbf5854dceace9446ed5e00d2\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.animalsapp-navigation-common-ktx-2.7.7-5 C:\Users\kicay\.gradle\caches\transforms-4\2575ea341110694323cd404bc24e0886\transformed\navigation-common-ktx-2.7.7\res
+com.example.animalsapp-jetified-activity-compose-1.9.0-6 C:\Users\kicay\.gradle\caches\transforms-4\2b86b03c942b4ef14596dab71b9e60d0\transformed\jetified-activity-compose-1.9.0\res
+com.example.animalsapp-jetified-profileinstaller-1.3.1-7 C:\Users\kicay\.gradle\caches\transforms-4\2f8100997f3251ba3e4ba5a5853769b9\transformed\jetified-profileinstaller-1.3.1\res
+com.example.animalsapp-jetified-customview-poolingcontainer-1.0.0-8 C:\Users\kicay\.gradle\caches\transforms-4\39de13f05dd6052f4456fc98b68b2dc1\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.example.animalsapp-jetified-navigation-compose-2.7.7-9 C:\Users\kicay\.gradle\caches\transforms-4\3dc9e513bede6748110e2ab0121bcff0\transformed\jetified-navigation-compose-2.7.7\res
+com.example.animalsapp-jetified-activity-ktx-1.9.0-10 C:\Users\kicay\.gradle\caches\transforms-4\4643c6dbc61cf8876c52172f87c72213\transformed\jetified-activity-ktx-1.9.0\res
+com.example.animalsapp-jetified-foundation-release-11 C:\Users\kicay\.gradle\caches\transforms-4\5308b2e1ecce1b8e8ba56940e24b0636\transformed\jetified-foundation-release\res
+com.example.animalsapp-jetified-appcompat-resources-1.6.1-12 C:\Users\kicay\.gradle\caches\transforms-4\5746810c3ac10d68aee41b7cfadb4017\transformed\jetified-appcompat-resources-1.6.1\res
+com.example.animalsapp-jetified-startup-runtime-1.1.1-13 C:\Users\kicay\.gradle\caches\transforms-4\5ce23cf9b2386bad674241cd53306457\transformed\jetified-startup-runtime-1.1.1\res
+com.example.animalsapp-jetified-foundation-layout-release-14 C:\Users\kicay\.gradle\caches\transforms-4\6f7676cdaed888f11650b58ac4fc73ff\transformed\jetified-foundation-layout-release\res
+com.example.animalsapp-navigation-runtime-2.7.7-15 C:\Users\kicay\.gradle\caches\transforms-4\6fefdc8219723a3f4572a98e0cfd930e\transformed\navigation-runtime-2.7.7\res
+com.example.animalsapp-lifecycle-runtime-2.7.0-16 C:\Users\kicay\.gradle\caches\transforms-4\7ba0491187a5121d777a77747d55ff35\transformed\lifecycle-runtime-2.7.0\res
+com.example.animalsapp-navigation-runtime-ktx-2.7.7-17 C:\Users\kicay\.gradle\caches\transforms-4\85be9ea6c5ca879a1ecfed8d3294c8f4\transformed\navigation-runtime-ktx-2.7.7\res
+com.example.animalsapp-jetified-runtime-release-18 C:\Users\kicay\.gradle\caches\transforms-4\85bf9d7e853e8e99b2ad2e7b9546dc4d\transformed\jetified-runtime-release\res
+com.example.animalsapp-jetified-ui-graphics-release-19 C:\Users\kicay\.gradle\caches\transforms-4\89690a91af1d4ac259439316db3425aa\transformed\jetified-ui-graphics-release\res
+com.example.animalsapp-jetified-core-ktx-1.13.0-20 C:\Users\kicay\.gradle\caches\transforms-4\969ba66630cad4fe601da617711bb454\transformed\jetified-core-ktx-1.13.0\res
+com.example.animalsapp-core-1.13.0-21 C:\Users\kicay\.gradle\caches\transforms-4\9bb4a188a353906c5d597f7f7b436982\transformed\core-1.13.0\res
+com.example.animalsapp-jetified-coil-base-2.5.0-22 C:\Users\kicay\.gradle\caches\transforms-4\a13f575c85e5ce8cc0a59e68d0bc0420\transformed\jetified-coil-base-2.5.0\res
+com.example.animalsapp-jetified-ui-release-23 C:\Users\kicay\.gradle\caches\transforms-4\a2426af7138539f0fc884d7ecf8262b3\transformed\jetified-ui-release\res
+com.example.animalsapp-jetified-ui-util-release-24 C:\Users\kicay\.gradle\caches\transforms-4\a7d18155ca54ba769040af9d54a57d64\transformed\jetified-ui-util-release\res
+com.example.animalsapp-jetified-savedstate-1.2.1-25 C:\Users\kicay\.gradle\caches\transforms-4\ac23853186a80086798b17874c5d84aa\transformed\jetified-savedstate-1.2.1\res
+com.example.animalsapp-jetified-animation-core-release-26 C:\Users\kicay\.gradle\caches\transforms-4\ac627661481fd24338e4df670426e844\transformed\jetified-animation-core-release\res
+com.example.animalsapp-navigation-common-2.7.7-27 C:\Users\kicay\.gradle\caches\transforms-4\b38715496e96d3642e0ef9c987e42ae5\transformed\navigation-common-2.7.7\res
+com.example.animalsapp-jetified-ui-unit-release-28 C:\Users\kicay\.gradle\caches\transforms-4\b665664104c788a3f34dfe4ac90bf36f\transformed\jetified-ui-unit-release\res
+com.example.animalsapp-core-runtime-2.2.0-29 C:\Users\kicay\.gradle\caches\transforms-4\bbcaa0a1ba923d1e1c5ad62e70600084\transformed\core-runtime-2.2.0\res
+com.example.animalsapp-jetified-activity-1.9.0-30 C:\Users\kicay\.gradle\caches\transforms-4\bd39e6206264a4debae770f4955a13bc\transformed\jetified-activity-1.9.0\res
+com.example.animalsapp-jetified-emoji2-1.3.0-31 C:\Users\kicay\.gradle\caches\transforms-4\bde16fdeb40cd846d4bd6f9b120d843c\transformed\jetified-emoji2-1.3.0\res
+com.example.animalsapp-jetified-material-icons-core-release-32 C:\Users\kicay\.gradle\caches\transforms-4\bfe78d593a55a2a568c7c00ed2070446\transformed\jetified-material-icons-core-release\res
+com.example.animalsapp-jetified-material-ripple-release-33 C:\Users\kicay\.gradle\caches\transforms-4\c532a3aecca541f4cc70f3261c81091e\transformed\jetified-material-ripple-release\res
+com.example.animalsapp-jetified-material-release-34 C:\Users\kicay\.gradle\caches\transforms-4\d5c4ca954afcaac91e78520ed654e165\transformed\jetified-material-release\res
+com.example.animalsapp-jetified-animation-release-35 C:\Users\kicay\.gradle\caches\transforms-4\d7ecc3482d65d389207cea49120a5ce0\transformed\jetified-animation-release\res
+com.example.animalsapp-jetified-lifecycle-process-2.7.0-36 C:\Users\kicay\.gradle\caches\transforms-4\d81dad9b93fbda4e0f4089f1a9ab57f1\transformed\jetified-lifecycle-process-2.7.0\res
+com.example.animalsapp-jetified-runtime-saveable-release-37 C:\Users\kicay\.gradle\caches\transforms-4\dfa9e190372ccae27ee307f7d832c3fa\transformed\jetified-runtime-saveable-release\res
+com.example.animalsapp-jetified-annotation-experimental-1.4.0-38 C:\Users\kicay\.gradle\caches\transforms-4\eccb9ec8a1f0a9ffb32e5b38cb71c0be\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.animalsapp-jetified-lifecycle-viewmodel-compose-2.7.0-39 C:\Users\kicay\.gradle\caches\transforms-4\ed51e0ebf40f9267689a05f835c8157c\transformed\jetified-lifecycle-viewmodel-compose-2.7.0\res
+com.example.animalsapp-jetified-lifecycle-viewmodel-ktx-2.7.0-40 C:\Users\kicay\.gradle\caches\transforms-4\f6d7e10f05fb1922ee5d603474d12df2\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.example.animalsapp-jetified-ui-geometry-release-41 C:\Users\kicay\.gradle\caches\transforms-4\f767684b895ae96870deeecb5c26de3b\transformed\jetified-ui-geometry-release\res
+com.example.animalsapp-lifecycle-livedata-core-2.7.0-42 C:\Users\kicay\.gradle\caches\transforms-4\f92c7e163252d67cffdcfd4949f25b04\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.animalsapp-pngs-43 C:\Users\kicay\Downloads\extra andorid\AnimalsAppFinalWithCode\app\build\generated\res\pngs\debug
+com.example.animalsapp-resValues-44 C:\Users\kicay\Downloads\extra andorid\AnimalsAppFinalWithCode\app\build\generated\res\resValues\debug
+com.example.animalsapp-packageDebugResources-45 C:\Users\kicay\Downloads\extra andorid\AnimalsAppFinalWithCode\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.animalsapp-packageDebugResources-46 C:\Users\kicay\Downloads\extra andorid\AnimalsAppFinalWithCode\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.animalsapp-merged_res-47 C:\Users\kicay\Downloads\extra andorid\AnimalsAppFinalWithCode\app\build\intermediates\merged_res\debug
+com.example.animalsapp-debug-48 C:\Users\kicay\Downloads\extra andorid\AnimalsAppFinalWithCode\app\src\debug\res
+com.example.animalsapp-main-49 C:\Users\kicay\Downloads\extra andorid\AnimalsAppFinalWithCode\app\src\main\res
