@@ -96,7 +96,7 @@ fun EnvironmentDetailScreen(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     items(animals.size) { index ->
-                        AnimalItem(animal = animals[index], onClick = { onAnimalClick(animals[index]._id) })
+                        AnimalItem(animal = animals[index], onClick = { onAnimalClick(animals[index].id) })
                     }
                 }
             }

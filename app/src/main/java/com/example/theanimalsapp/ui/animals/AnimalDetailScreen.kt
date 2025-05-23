@@ -20,16 +20,26 @@ import com.example.theanimalsapp.data.Animal
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AnimalDetailScreen(animalId: String) {
+fun AnimalDetailScreen(animalId: String?) {
+    if (animalId.isNullOrBlank()) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("Error: ID del animal no válido.", color = Color.White)
+        }
+        return
+    }
+
     var animal by remember { mutableStateOf<Animal?>(null) }
     var isLoading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
-    // Cargar datos desde la API
     LaunchedEffect(animalId) {
         isLoading = true
         errorMessage = null
         try {
+            println("🔍 Solicitando animal con ID: $animalId")
             animal = ApiClient.animalsApi.getAnimalDetail(animalId)
         } catch (e: Exception) {
             e.printStackTrace()
@@ -80,7 +90,6 @@ fun AnimalDetailScreen(animalId: String) {
                                 .padding(16.dp),
                             verticalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
-                            // Imagen principal
                             item {
                                 AsyncImage(
                                     model = animalData.image,
@@ -93,7 +102,6 @@ fun AnimalDetailScreen(animalId: String) {
                                 )
                             }
 
-                            // Nombre
                             item {
                                 Text(
                                     text = animalData.name,
@@ -104,7 +112,6 @@ fun AnimalDetailScreen(animalId: String) {
                                 )
                             }
 
-                            // Descripción
                             item {
                                 Text(
                                     text = animalData.description,
@@ -112,7 +119,6 @@ fun AnimalDetailScreen(animalId: String) {
                                 )
                             }
 
-                            // Galería de imágenes
                             if (!animalData.imageGallery.isNullOrEmpty()) {
                                 item {
                                     Text(
@@ -126,7 +132,7 @@ fun AnimalDetailScreen(animalId: String) {
                                 items(animalData.imageGallery) { imageUrl ->
                                     AsyncImage(
                                         model = imageUrl,
-                                        contentDescription = "Imagen de galería",
+                                        contentDescription = "Imagen",
                                         modifier = Modifier
                                             .fillMaxWidth()
                                             .height(150.dp)
@@ -136,7 +142,6 @@ fun AnimalDetailScreen(animalId: String) {
                                 }
                             }
 
-                            // Lista de hechos interesantes
                             if (!animalData.facts.isNullOrEmpty()) {
                                 item {
                                     Text(

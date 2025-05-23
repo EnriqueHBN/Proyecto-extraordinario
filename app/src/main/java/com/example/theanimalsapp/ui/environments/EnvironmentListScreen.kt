@@ -90,7 +90,7 @@ fun EnvironmentListScreen(onEnvironmentClick: (String) -> Unit) {
                         items(environments.size) { index ->
                             EnvironmentItem(
                                 environment = environments[index],
-                                onClick = { onEnvironmentClick(environments[index]._id) }
+                                onClick = { onEnvironmentClick(environments[index].id) }
                             )
                         }
                     }

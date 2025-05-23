@@ -91,7 +91,7 @@ fun AnimalListScreen(onAnimalClick: (String) -> Unit) {
                         items(animals) { animal ->
                             AnimalItem(
                                 animal = animal,
-                                onClick = { onAnimalClick(animal._id) }
+                                onClick = { onAnimalClick(animal.id) } // ← .id, no ._id
                             )
                         }
                     }

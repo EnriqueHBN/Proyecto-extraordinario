@@ -1,12 +1,14 @@
 package com.example.theanimalsapp.data
 
+import com.google.gson.annotations.SerializedName
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-
+// ✅ Animal con _id mapeado como id
 data class Animal(
-    val _id: String,
+    @SerializedName("_id")
+    val id: String,
     val name: String,
     val image: String,
     val description: String,
@@ -14,10 +16,10 @@ data class Animal(
     val facts: List<String>?
 )
 
-
-
+// ✅ Environment con _id mapeado como id
 data class Environment(
-    val _id: String,
+    @SerializedName("_id")
+    val id: String,
     val name: String,
     val image: String,
     val description: String,
@@ -39,5 +41,4 @@ interface AnimalsApi {
 
     @GET("animals")
     suspend fun getAnimalsByEnvironment(@Query("environmentId") environmentId: String): List<Animal>
-
 }
