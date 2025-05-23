@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -30,7 +31,8 @@ fun AnimalListScreen(onAnimalClick: (String) -> Unit) {
         try {
             animals = ApiClient.animalsApi.getAnimals()
         } catch (e: Exception) {
-            errorMessage = "Error al cargar animales: ${e.message}"
+            e.printStackTrace()
+            errorMessage = "Error al cargar animales: ${e.localizedMessage}"
         } finally {
             isLoading = false
         }
@@ -58,7 +60,7 @@ fun AnimalListScreen(onAnimalClick: (String) -> Unit) {
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center
                     ) {
-                        CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
+                        CircularProgressIndicator(color = MaterialTheme.colorScheme.onPrimary)
                     }
                     errorMessage != null -> Box(
                         modifier = Modifier.fillMaxSize(),
@@ -86,10 +88,10 @@ fun AnimalListScreen(onAnimalClick: (String) -> Unit) {
                             .padding(16.dp),
                         verticalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        items(animals.size) { index ->
+                        items(animals) { animal ->
                             AnimalItem(
-                                animal = animals[index],
-                                onClick = { onAnimalClick(animals[index]._id) }
+                                animal = animal,
+                                onClick = { onAnimalClick(animal._id) }
                             )
                         }
                     }

@@ -10,10 +10,10 @@ data class Animal(
     val name: String,
     val image: String,
     val description: String,
-    val imageGallery: List<String>,
-    val environmentId: String,
-    val facts: List<String>
+    val imageGallery: List<String>?,
+    val facts: List<String>?
 )
+
 
 
 data class Environment(
