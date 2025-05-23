@@ -3,6 +3,7 @@ package com.example.theanimalsapp.ui.animals
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -31,7 +32,8 @@ fun AnimalDetailScreen(animalId: String) {
         try {
             animal = ApiClient.animalsApi.getAnimalDetail(animalId)
         } catch (e: Exception) {
-            errorMessage = "Error al cargar el animal: ${e.message}"
+            e.printStackTrace()
+            errorMessage = "No se pudo cargar el animal: ${e.localizedMessage}"
         } finally {
             isLoading = false
         }
@@ -111,7 +113,7 @@ fun AnimalDetailScreen(animalId: String) {
                             }
 
                             // Galería de imágenes
-                            if (animalData.imageGallery.isNotEmpty()) {
+                            if (!animalData.imageGallery.isNullOrEmpty()) {
                                 item {
                                     Text(
                                         text = "Galería de Imágenes",
@@ -121,10 +123,10 @@ fun AnimalDetailScreen(animalId: String) {
                                         )
                                     )
                                 }
-                                items(animalData.imageGallery.size) { index ->
+                                items(animalData.imageGallery) { imageUrl ->
                                     AsyncImage(
-                                        model = animalData.imageGallery[index],
-                                        contentDescription = "Imagen ${index + 1}",
+                                        model = imageUrl,
+                                        contentDescription = "Imagen de galería",
                                         modifier = Modifier
                                             .fillMaxWidth()
                                             .height(150.dp)
@@ -135,7 +137,7 @@ fun AnimalDetailScreen(animalId: String) {
                             }
 
                             // Lista de hechos interesantes
-                            if (animalData.facts.isNotEmpty()) {
+                            if (!animalData.facts.isNullOrEmpty()) {
                                 item {
                                     Text(
                                         text = "Hechos Interesantes",
@@ -145,9 +147,9 @@ fun AnimalDetailScreen(animalId: String) {
                                         )
                                     )
                                 }
-                                items(animalData.facts.size) { index ->
+                                items(animalData.facts) { fact ->
                                     Text(
-                                        text = "- ${animalData.facts[index]}",
+                                        text = "- $fact",
                                         style = MaterialTheme.typography.bodyMedium.copy(
                                             color = Color.White
                                         )
