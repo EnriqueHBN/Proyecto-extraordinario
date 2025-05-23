@@ -54,15 +54,17 @@ fun TheAnimalsApp() {
             ) {
                 composable("animalList") {
                     AnimalListScreen { animalId ->
+                        println("🐾 Navegando con ID: $animalId")
                         navController.navigate("animalDetail/$animalId")
                     }
                 }
 
-                // ✅ ID corregido: "id"
                 composable("animalDetail/{id}") { backStackEntry ->
                     val animalId = backStackEntry.arguments?.getString("id")
+                    println("📦 Navegando a animal con ID: $animalId")
                     AnimalDetailScreen(animalId)
                 }
+
 
                 composable("environmentList") {
                     EnvironmentListScreen { environmentId ->
@@ -76,6 +78,7 @@ fun TheAnimalsApp() {
                         EnvironmentDetailScreen(
                             environmentId = environmentId,
                             onAnimalClick = { animalId ->
+                                println("🐾 Navegando desde ambiente con ID: $animalId")
                                 navController.navigate("animalDetail/$animalId")
                             }
                         )

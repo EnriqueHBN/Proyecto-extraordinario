@@ -11,7 +11,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.theanimalsapp.data.ApiClient
@@ -24,7 +26,6 @@ fun AnimalListScreen(onAnimalClick: (String) -> Unit) {
     var isLoading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
-    // Cargar datos desde la API
     LaunchedEffect(Unit) {
         isLoading = true
         errorMessage = null
@@ -41,58 +42,46 @@ fun AnimalListScreen(onAnimalClick: (String) -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Animales") },
+                title = {
+                    Text(
+                        text = "Lista de Animales",
+                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                        color = Color.Black
+                    )
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimary
+                    containerColor = Color(0xFFE0F7FA)
                 )
             )
         },
+        containerColor = Color(0xFFF5F5F5),
         content = { paddingValues ->
             Box(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
-                    .background(MaterialTheme.colorScheme.primary)
             ) {
                 when {
-                    isLoading -> Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator(color = MaterialTheme.colorScheme.onPrimary)
+                    isLoading -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        CircularProgressIndicator(color = Color(0xFF2E7D32))
                     }
-                    errorMessage != null -> Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = errorMessage ?: "Error desconocido",
-                            color = MaterialTheme.colorScheme.error,
-                            style = MaterialTheme.typography.bodyLarge
-                        )
+                    errorMessage != null -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(text = errorMessage!!, color = Color.Red)
                     }
-                    animals.isEmpty() -> Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = "No se encontraron animales.",
-                            color = MaterialTheme.colorScheme.onBackground,
-                            style = MaterialTheme.typography.bodyLarge
-                        )
+                    animals.isEmpty() -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(text = "No se encontraron animales.", color = Color.DarkGray)
                     }
                     else -> LazyColumn(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(16.dp),
-                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
                         items(animals) { animal ->
-                            AnimalItem(
-                                animal = animal,
-                                onClick = { onAnimalClick(animal.id) } // ← .id, no ._id
-                            )
+                            AnimalItem(animal = animal) {
+                                println("🐾 Click en animal con ID: ${animal.id}")
+                                onAnimalClick(animal.id)
+                            }
                         }
                     }
                 }
@@ -108,38 +97,32 @@ fun AnimalItem(animal: Animal, onClick: () -> Unit) {
             .fillMaxWidth()
             .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(4.dp)
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Row(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Imagen del animal
             AsyncImage(
                 model = animal.image,
                 contentDescription = animal.name,
                 modifier = Modifier
-                    .size(88.dp)
-                    .clip(RoundedCornerShape(44.dp))
-                    .background(MaterialTheme.colorScheme.secondaryContainer),
+                    .size(72.dp)
+                    .clip(RoundedCornerShape(12.dp)),
                 contentScale = ContentScale.Crop
             )
-            Spacer(modifier = Modifier.width(16.dp))
-            // Nombre y descripción del animal
-            Column(
-                verticalArrangement = Arrangement.Center
-            ) {
+            Spacer(modifier = Modifier.width(12.dp))
+            Column {
                 Text(
                     text = animal.name,
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.primary
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                    color = Color.Black
                 )
-                Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = animal.description.take(80) + "...",
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.secondary
+                    color = Color.DarkGray
                 )
             }
         }

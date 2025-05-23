@@ -22,11 +22,8 @@ import com.example.theanimalsapp.data.Animal
 @Composable
 fun AnimalDetailScreen(animalId: String?) {
     if (animalId.isNullOrBlank()) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            Text("Error: ID del animal no válido.", color = Color.White)
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Text("❌ ID del animal no válido.", color = Color.Red)
         }
         return
     }
@@ -36,13 +33,11 @@ fun AnimalDetailScreen(animalId: String?) {
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(animalId) {
+        println("🔍 Solicitando animal con ID: $animalId")
         isLoading = true
-        errorMessage = null
         try {
-            println("🔍 Solicitando animal con ID: $animalId")
             animal = ApiClient.animalsApi.getAnimalDetail(animalId)
         } catch (e: Exception) {
-            e.printStackTrace()
             errorMessage = "No se pudo cargar el animal: ${e.localizedMessage}"
         } finally {
             isLoading = false
@@ -52,44 +47,29 @@ fun AnimalDetailScreen(animalId: String?) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Detalle del Animal") },
+                title = { Text("Detalles del Animal", color = Color.Black) },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF2C3E50),
-                    titleContentColor = Color(0xFFB1E693)
+                    containerColor = Color(0xFFE0F7FA)
                 )
             )
         },
-        content = { paddingValues ->
+        containerColor = Color(0xFFFDFDFD),
+        content = { padding ->
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(paddingValues)
-                    .background(Color(0xFF2C3E50))
+                    .padding(padding)
+                    .padding(16.dp)
             ) {
                 when {
-                    isLoading -> Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator(color = Color(0xFFB1E693))
+                    isLoading -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        CircularProgressIndicator(color = Color(0xFF2E7D32))
                     }
-                    errorMessage != null -> Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = errorMessage ?: "Error desconocido",
-                            color = Color.White,
-                            style = MaterialTheme.typography.bodyLarge
-                        )
+                    errorMessage != null -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(text = errorMessage!!, color = Color.Red)
                     }
                     else -> animal?.let { animalData ->
-                        LazyColumn(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(16.dp),
-                            verticalArrangement = Arrangement.spacedBy(16.dp)
-                        ) {
+                        LazyColumn(verticalArrangement = Arrangement.spacedBy(16.dp)) {
                             item {
                                 AsyncImage(
                                     model = animalData.image,
@@ -105,17 +85,16 @@ fun AnimalDetailScreen(animalId: String?) {
                             item {
                                 Text(
                                     text = animalData.name,
-                                    style = MaterialTheme.typography.headlineMedium.copy(
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color(0xFFB1E693)
-                                    )
+                                    style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                                    color = Color.Black
                                 )
                             }
 
                             item {
                                 Text(
                                     text = animalData.description,
-                                    style = MaterialTheme.typography.bodyLarge.copy(color = Color.White)
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = Color.DarkGray
                                 )
                             }
 
@@ -123,10 +102,8 @@ fun AnimalDetailScreen(animalId: String?) {
                                 item {
                                     Text(
                                         text = "Galería de Imágenes",
-                                        style = MaterialTheme.typography.titleMedium.copy(
-                                            fontWeight = FontWeight.SemiBold,
-                                            color = Color(0xFFB1E693)
-                                        )
+                                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
+                                        color = Color(0xFF2E7D32)
                                     )
                                 }
                                 items(animalData.imageGallery) { imageUrl ->
@@ -146,18 +123,15 @@ fun AnimalDetailScreen(animalId: String?) {
                                 item {
                                     Text(
                                         text = "Hechos Interesantes",
-                                        style = MaterialTheme.typography.titleMedium.copy(
-                                            fontWeight = FontWeight.SemiBold,
-                                            color = Color(0xFFB1E693)
-                                        )
+                                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
+                                        color = Color(0xFF2E7D32)
                                     )
                                 }
                                 items(animalData.facts) { fact ->
                                     Text(
                                         text = "- $fact",
-                                        style = MaterialTheme.typography.bodyMedium.copy(
-                                            color = Color.White
-                                        )
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = Color.DarkGray
                                     )
                                 }
                             }
