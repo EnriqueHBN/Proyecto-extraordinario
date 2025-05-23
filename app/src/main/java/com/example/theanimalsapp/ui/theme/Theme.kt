@@ -6,10 +6,10 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-val BlueMountain = Color(0xFF2C3E50)
-val GreenWater = Color(0xFF009688)
+val BlueMountain = Color(0xFF2196F3)
+val GreenWater = Color(0xFF000000)
 val LightGrayBackground = Color(0xFFF5F5F5)
-val GreenPrimary = Color(0xFF2C9E4F) // Puedes cambiar este valor según el verde que prefieras
+val GreenPrimary = Color(0xFFFFFFFF) // Puedes cambiar este valor según el verde que prefieras
 
 
 private val LightColorScheme = lightColorScheme(
